@@ -6,6 +6,9 @@
 body {
     background-image: url('bgImage.png');
     background-size: cover;
+ 
+
+
 }
 
 .main {
@@ -63,6 +66,7 @@ body {
 .time {
     margin-top: 10px;
     font-size: 100px;
+    letter-spacing: 5px;
 }
 
 .play {

@@ -65,7 +65,16 @@ function updateClock (wR) {
     let count = wR - pomodoroTime.currentTime;
     let m = Math.floor((count % (1000 * 60 * 60)) / (1000 * 60));
     let s = Math.floor((count % (1000 * 60)) / 1000);
-    document.querySelector('.time').innerHTML = `${m}:${s}`;
+
+    if ( m < 10 && s < 10  ) {
+        document.querySelector('.time').innerHTML = `0${m}:0${s}`;
+    } else if ( m < 10 && s >= 10 ) {
+        document.querySelector('.time').innerHTML = `0${m}:${s}`;
+    } else if ( m > 10 && s < 10 ) {
+        document.querySelector('.time').innerHTML = `${m}:0${s}`;
+      }  else {
+        document.querySelector('.time').innerHTML = `${m}:${s}`;
+    }
 }
 
 // add a minute of time
